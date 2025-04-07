@@ -1,5 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 import { Home } from "./containers/Home";
+import React, { Suspense } from "react";
+const RemoteHome = React.lazy(() => import("remoteApp/RemoteHome"));
 
 const router = createBrowserRouter([
   {
@@ -9,6 +11,14 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element: <Home />,
+  },
+  {
+    path: "/remoteHome",
+    element: (
+      <Suspense fallback={<span>Loading...</span>}>
+        <RemoteHome />
+      </Suspense>
+    ),
   },
 ]);
 
