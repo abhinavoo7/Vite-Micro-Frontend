@@ -11,7 +11,6 @@ export default defineConfig({
       filename: "remoteEntry.js",
       exposes: {
         "./RemoteHome": "./src/RemoteHome.tsx",
-        "./SecondRemote": "./src/SecondRemote.tsx",
       },
       shared: ["react", "react-dom", "react-router"],
     }),
